@@ -83,7 +83,7 @@ resource "aws_instance" "example" {
 # Output variable
 
 output "vpc_id" {
-    value = aws_vpc.sample_vpc.id
+    value = aws_vpc.sample_vpc.vpc_id
 }
 
 output "ec2_id" {
