@@ -2,10 +2,15 @@ resource "aws_instance" "example" {
   count = var.instance_count
   ami           = "resolve:ssm:/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-default-x86_64"
   instance_type = var.allowed_vm_type[3]
-  region = var.region
+  # region = var.region
+  region = var.config.region
 
-  monitoring = var.monitoring_enabled
+
+  # monitoring = var.monitoring_enabled
+  monitoring = var.config.monitoring
+
   associate_public_ip_address = var.associate_public_ip_address
+  
 
   tags = var.tags
 }
